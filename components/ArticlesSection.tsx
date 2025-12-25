@@ -24,7 +24,7 @@ const ArticlesSection: React.FC = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {articles.map((article, i) => (
             <div key={i} className="group cursor-pointer">
-              <div className="rounded-xl overflow-hidden aspect-[4/3] mb-4 bg-gray-50">
+              <div className="rounded overflow-hidden aspect-[4/3] mb-4 bg-gray-50">
                 <img src={article.img} alt={article.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
               </div>
               <h3 className="font-medium text-lg leading-snug mb-2 group-hover:underline font-heading">{article.title}</h3>

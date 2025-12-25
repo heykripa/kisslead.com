@@ -11,7 +11,7 @@ export interface PolicyContent {
 export const POLICIES: Record<string, PolicyContent> = {
   'terms-conditions': {
     title: 'Terms & Conditions',
-    lastUpdated: 'May 2024',
+    lastUpdated: 'December 2025',
     sections: [
       {
         heading: '1. Electronic Record',
@@ -55,7 +55,7 @@ export const POLICIES: Record<string, PolicyContent> = {
   },
   'privacy-policy': {
     title: 'Privacy Policy',
-    lastUpdated: 'May 2024',
+    lastUpdated: 'December 2025',
     sections: [
       {
         heading: 'Introduction',
@@ -89,7 +89,7 @@ export const POLICIES: Record<string, PolicyContent> = {
   },
   'refund-cancellation': {
     title: 'Refund and Cancellation Policy',
-    lastUpdated: 'May 2024',
+    lastUpdated: 'December 2025',
     sections: [
       {
         heading: 'Cancellation Policy',
@@ -111,7 +111,7 @@ export const POLICIES: Record<string, PolicyContent> = {
   },
   'return-policy': {
     title: 'Return Policy',
-    lastUpdated: 'May 2024',
+    lastUpdated: 'December 2025',
     sections: [
       {
         heading: 'Eligibility for Returns',
@@ -137,7 +137,7 @@ export const POLICIES: Record<string, PolicyContent> = {
   },
   'shipping-policy': {
     title: 'Shipping Policy',
-    lastUpdated: 'May 2024',
+    lastUpdated: 'December 2025',
     sections: [
       {
         heading: 'Shipping Methods',

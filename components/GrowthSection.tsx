@@ -27,7 +27,7 @@ const GrowthSection: React.FC = () => {
         </div>
         
         <div className="flex-1 w-full">
-          <div className="rounded-2xl overflow-hidden aspect-[4/3]">
+          <div className="rounded overflow-hidden aspect-[4/3]">
             <img 
               src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200" 
               alt="Growth Chart" 

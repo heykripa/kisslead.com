@@ -1,8 +1,8 @@
 
 import React, { useState } from 'react';
 import { Search, ChevronDown } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { Button } from './ui/Button';
-import Logo from './Logo';
 import { cn } from '../lib/utils';
 
 interface SubMenuItem {
@@ -23,45 +23,47 @@ const Navbar: React.FC = () => {
   const navigation: NavItem[] = [
     {
       label: "Digital Marketing",
-      href: "#",
+      href: "/",
       hasDropdown: true,
       subItems: [
-        { label: 'Search Engine Optimization (SEO)', href: '#' },
-        { label: 'Pay Per Click (PPC) Management', href: '#' },
-        { label: 'Social Media Marketing', href: '#' },
-        { label: 'Content Marketing', href: '#' },
-        { label: 'Email Marketing', href: '#' },
+        { label: 'Search Engine Optimization (SEO)', href: '/' },
+        { label: 'Pay Per Click (PPC) Management', href: '/' },
+        { label: 'Social Media Marketing', href: '/' },
+        { label: 'Content Marketing', href: '/' },
+        { label: 'Email Marketing', href: '/' },
       ]
     },
     {
       label: "Web Development",
-      href: "#",
+      href: "/",
       hasDropdown: true,
       subItems: [
-        { label: 'Custom Website Design', href: '#' },
-        { label: 'E-commerce Solutions', href: '#' },
-        { label: 'CMS Development', href: '#' },
-        { label: 'Website Maintenance', href: '#' },
+        { label: 'Custom Website Design', href: '/' },
+        { label: 'E-commerce Solutions', href: '/' },
+        { label: 'CMS Development', href: '/' },
+        { label: 'Website Maintenance', href: '/' },
       ]
     },
-    { label: "Graphic Design", href: "#" },
-    { label: "SEO", href: "#" },
-    { label: "Lead Generations", href: "#" },
-    { label: "Contact", href: "#" },
+    { label: "Graphic Design", href: "/" },
+    { label: "SEO", href: "/" },
+    { label: "Lead Generations", href: "/" },
+    { label: "Contact", href: "/" },
   ];
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          {/* Logo */}
           <div className="flex items-center">
-            <a href="#/" className="block">
-              <Logo className="h-10 cursor-pointer" />
-            </a>
+            <Link to="/" className="block">
+              <img 
+                src="/kisslead-logo.svg" 
+                alt="Kisslead" 
+                className="h-14 w-auto object-contain" 
+              />
+            </Link>
           </div>
 
-          {/* Navigation Links */}
           <div className="hidden md:flex items-center space-x-6 lg:space-x-8 h-full">
             {navigation.map((item) => (
               <div
@@ -70,8 +72,8 @@ const Navbar: React.FC = () => {
                 onMouseEnter={() => item.hasDropdown && setActiveDropdown(item.label)}
                 onMouseLeave={() => setActiveDropdown(null)}
               >
-                <a
-                  href={item.href}
+                <Link
+                  to={item.href}
                   className={cn(
                     "flex items-center space-x-1 text-[13px] font-medium transition-colors whitespace-nowrap py-2",
                     activeDropdown === item.label ? "text-black" : "text-gray-600 hover:text-black"
@@ -86,9 +88,8 @@ const Navbar: React.FC = () => {
                       )} 
                     />
                   )}
-                </a>
+                </Link>
 
-                {/* Dropdown Menu */}
                 {item.hasDropdown && item.subItems && (
                   <div
                     className={cn(
@@ -100,13 +101,13 @@ const Navbar: React.FC = () => {
                   >
                     <div className="flex flex-col">
                       {item.subItems.map((subItem) => (
-                        <a
+                        <Link
                           key={subItem.label}
-                          href={subItem.href}
+                          to={subItem.href}
                           className="px-6 py-2.5 text-[13px] text-gray-500 hover:text-black hover:bg-gray-50 transition-colors"
                         >
                           {subItem.label}
-                        </a>
+                        </Link>
                       ))}
                     </div>
                   </div>
@@ -115,7 +116,6 @@ const Navbar: React.FC = () => {
             ))}
           </div>
 
-          {/* Right Actions */}
           <div className="flex items-center space-x-4">
             <Button variant="ghost" size="icon">
               <Search className="w-5 h-5 text-gray-600" />

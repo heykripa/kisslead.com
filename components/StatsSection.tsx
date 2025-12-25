@@ -33,7 +33,7 @@ const StatsSection: React.FC = () => {
     <section className="py-20 px-4">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
         {stats.map((stat, i) => (
-          <div key={i} className="bg-gray-50 rounded-2xl p-10 flex flex-col justify-between hover:bg-gray-100/80 transition-colors">
+          <div key={i} className="bg-gray-50 rounded p-10 flex flex-col justify-between hover:bg-gray-100/80 transition-colors">
             <div>
               <h3 className="text-xl font-medium mb-2 font-heading">{stat.title}</h3>
               <p className="text-sm text-gray-500 mb-12">{stat.subtitle}</p>

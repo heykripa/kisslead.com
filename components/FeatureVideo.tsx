@@ -6,7 +6,7 @@ const FeatureVideo: React.FC = () => {
   return (
     <section className="py-20 px-4">
       <div className="max-w-7xl mx-auto">
-        <div className="relative rounded-3xl overflow-hidden aspect-video bg-gray-50 border border-gray-100 group cursor-pointer">
+        <div className="relative rounded overflow-hidden aspect-video bg-gray-50 border border-gray-100 group cursor-pointer">
           <img 
             src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=1920" 
             alt="Marketing Professional" 

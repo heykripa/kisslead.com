@@ -5,10 +5,26 @@ import { Badge } from './ui/Badge';
 
 const WorkGrid: React.FC = () => {
   const projects = [
-    { title: 'IUNIK', tags: ['Marketing'], img: 'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&fit=crop&q=80&w=800' },
-    { title: 'Water Bank', tags: ['PPC', 'SEO'], img: 'https://images.unsplash.com/photo-1596462502278-27bfad450216?auto=format&fit=crop&q=80&w=800' },
-    { title: 'One Two Free', tags: ['Social Media'], img: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&q=80&w=800' },
-    { title: 'Heartleaf 88', tags: ['Marketing'], img: 'https://images.unsplash.com/photo-1612817288484-6f916006741a?auto=format&fit=crop&q=80&w=800' },
+    { 
+      title: 'Brand Evolution', 
+      tags: ['Graphic Design'], 
+      img: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&q=80&w=800' 
+    },
+    { 
+      title: 'Search Authority', 
+      tags: ['SEO', 'Strategy'], 
+      img: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800' 
+    },
+    { 
+      title: 'Enterprise Portal', 
+      tags: ['Web Development'], 
+      img: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=800' 
+    },
+    { 
+      title: 'Visual Strategy', 
+      tags: ['Graphic Design', 'SEO'], 
+      img: 'https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=800' 
+    },
   ];
 
   return (
@@ -25,7 +41,7 @@ const WorkGrid: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {projects.map((project, i) => (
             <div key={i} className="group cursor-pointer">
-              <div className="relative rounded-2xl overflow-hidden aspect-[4/3] mb-6 bg-gray-50">
+              <div className="relative rounded overflow-hidden aspect-[4/3] mb-6 bg-gray-50">
                 <img 
                   src={project.img} 
                   alt={project.title} 

@@ -58,7 +58,7 @@ const ServicesGrid: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, i) => (
-            <div key={i} className={cn("p-10 rounded-2xl flex flex-col justify-between min-h-[300px]", service.bg)}>
+            <div key={i} className={cn("p-10 rounded flex flex-col justify-between min-h-[300px]", service.bg)}>
               <div>
                 <h3 className="text-2xl font-medium mb-4 leading-tight font-heading">{service.title}</h3>
                 <p className="text-gray-500 mb-8">{service.desc}</p>

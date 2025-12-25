@@ -13,7 +13,7 @@ const Hero: React.FC = () => {
       <div className="max-w-4xl mx-auto text-center relative z-10">
         <Badge variant="outline" className="mb-8 py-1.5 px-4 cursor-pointer hover:bg-gray-50 group">
           <span className="flex items-center">
-            Discount 30% | For newly joined customers
+            100% Lead Guaranteed | For all your business needs
             <MoveRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </span>
         </Badge>
