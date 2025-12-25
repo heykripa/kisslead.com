@@ -19,7 +19,7 @@ const PolicyPage: React.FC<PolicyPageProps> = ({ policy }) => {
           <h1 className="text-4xl md:text-6xl font-medium font-heading tracking-tight mb-4">
             {policy.title}
           </h1>
-          <p className="text-sm text-gray-400 font-medium">
+          <p className="text-sm text-gray-400 font-medium font-serif">
             Last Updated: {policy.lastUpdated}
           </p>
         </div>
@@ -33,15 +33,15 @@ const PolicyPage: React.FC<PolicyPageProps> = ({ policy }) => {
               <h2 className="text-2xl font-medium font-heading mb-6 group-hover:text-black transition-colors">
                 {section.heading}
               </h2>
-              <div className="text-lg text-gray-600 leading-relaxed font-serif space-y-4">
+              <div className="text-lg text-gray-600 leading-relaxed space-y-4">
                 {Array.isArray(section.content) ? (
-                  <ul className="space-y-4 list-disc pl-5 marker:text-gray-300">
+                  <ul className="space-y-4 list-disc pl-5 marker:text-gray-300 font-serif">
                     {section.content.map((item, i) => (
                       <li key={i}>{item}</li>
                     ))}
                   </ul>
                 ) : (
-                  <p>{section.content}</p>
+                  <p className="font-serif">{section.content}</p>
                 )}
               </div>
             </section>
@@ -49,7 +49,7 @@ const PolicyPage: React.FC<PolicyPageProps> = ({ policy }) => {
         </div>
 
         <div className="mt-24 pt-12 border-t border-gray-100">
-          <p className="text-sm text-gray-400 italic">
+          <p className="text-sm text-gray-400 italic font-serif">
             Questions regarding this policy can be directed to our legal department at legal@kisslead.com
           </p>
         </div>

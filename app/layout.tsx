@@ -18,9 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Michroma&display=swap" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/geist@1.3.0/dist/fonts/geist-sans/style.css" rel="stylesheet" />
       </head>
       <body className="antialiased bg-white selection:bg-black selection:text-white">
         <Navbar />

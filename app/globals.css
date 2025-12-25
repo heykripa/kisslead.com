@@ -9,18 +9,18 @@
 }
 
 body {
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Geist Sans', sans-serif;
   color: rgb(var(--foreground-rgb));
   background: rgb(var(--background-rgb));
 }
 
 .font-heading {
-  font-family: 'Michroma', sans-serif;
+  font-family: 'Geist Sans', sans-serif;
   letter-spacing: -0.02em;
 }
 
 .font-serif {
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Geist Sans', sans-serif;
 }
 
 .bg-grid {

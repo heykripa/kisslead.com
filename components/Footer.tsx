@@ -68,7 +68,7 @@ const Footer: React.FC = () => {
               <div className="mb-8">
                 <Link to="/">
                   <img 
-                    src="/kisslead-logo.svg" 
+                    src="/kisslead-logo.png" 
                     alt="Kisslead" 
                     className="h-9 w-auto object-contain" 
                   />
