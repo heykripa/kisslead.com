@@ -1,50 +1,36 @@
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-# Kisslead Digital Marketing Agency
+## Getting Started
 
-A premium, responsive website template tailored for digital marketing agencies, creative studios, and consultancy firms. Built with modern web technologies to ensure performance, scalability, and ease of customization.
+First, run the development server:
 
-## Key Features
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-- **Sophisticated Design**: Features a clean, grid-based layout with refined typography (Roboto Slab & Michroma).
-- **Comprehensive Sections**:
-  - **Hero**: Impactful landing area with background masking effects.
-  - **Services**: Detailed grid layout for service offerings.
-  - **Portfolio**: Showcase for recent work and case studies.
-  - **Social Proof**: Statistics section and client logo strip.
-  - **Resources**: Articles and blog previews.
-- **Dynamic Legal Pages**: A structured system for handling policy pages (Privacy, Terms, Refunds) via `lib/policies.ts` and dynamic routing.
-- **Responsive Navigation**: Mobile-friendly navbar with dropdown menus.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Tech Stack
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-- **Frontend Framework**: React 19
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS
-- **Routing**: React Router DOM
-- **Icons**: Lucide React
-- **Typography**: Google Fonts (Roboto Slab, Michroma)
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Project Structure
+## Learn More
 
-- `components/`: Contains all functional React components.
-  - `ui/`: Reusable primitives like Buttons and Badges.
-- `lib/`: Utility functions and static data configurations (e.g., policy text).
-- `public/`: Static assets including logos and images.
-- `App.tsx`: Main application routing and layout structure.
+To learn more about Next.js, take a look at the following resources:
 
-## Customization Guide
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-### Changing the Logo
-The website uses an SVG logo located at `/public/kisslead-logo.svg`. Replace this file to update the branding across the header and footer.
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-### Updating Content
-- **Legal Pages**: Modify `lib/policies.ts` to update the text for Terms, Privacy, and other policies without touching the UI code.
-- **Navigation**: Update the `navigation` array in `components/Navbar.tsx` to change menu items.
-- **Services & Stats**: Data for these sections is contained locally within their respective components (`ServicesGrid.tsx`, `StatsSection.tsx`) for easy editing.
+## Deploy on Vercel
 
-### Styles
-Global styles and Tailwind directives are defined in `app/globals.css`. Font families are loaded via the `<head>` in `index.html`.
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-## License
-
-This project is available for personal and commercial use.
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

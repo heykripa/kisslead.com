@@ -1,27 +1,21 @@
-
-import React from 'react';
-import Hero from '../components/Hero';
-import LogoStrip from '../components/LogoStrip';
-import FeatureVideo from '../components/FeatureVideo';
-import StatsSection from '../components/StatsSection';
-import GrowthSection from '../components/GrowthSection';
-import WorkGrid from '../components/WorkGrid';
-import ServicesGrid from '../components/ServicesGrid';
-import LargeCTA from '../components/LargeCTA';
-import ArticlesSection from '../components/ArticlesSection';
+import { Header } from "@/components/layout/Header"
+import { Hero } from "@/components/sections/Hero"
+import { Projects } from "@/components/sections/Projects"
+import { Services } from "@/components/sections/Services"
+import { Stats } from "@/components/sections/Stats"
+import { FAQ } from "@/components/sections/FAQ"
+import { Footer } from "@/components/sections/Footer"
 
 export default function Home() {
   return (
-    <>
+    <main className="min-h-screen bg-background font-sans text-foreground selection:bg-black selection:text-white">
+      <Header />
       <Hero />
-      <LogoStrip />
-      <FeatureVideo />
-      <StatsSection />
-      <GrowthSection />
-      <WorkGrid />
-      <ServicesGrid />
-      <LargeCTA />
-      <ArticlesSection />
-    </>
-  );
+      <Projects />
+      <Services />
+      <Stats />
+      <FAQ />
+      <Footer />
+    </main>
+  )
 }
