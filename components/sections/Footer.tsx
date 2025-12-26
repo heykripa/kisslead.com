@@ -8,7 +8,7 @@ export function Footer() {
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-24">
           <div className="space-y-8">
-            <h2 className="text-3xl md:text-4xl font-bold leading-tight max-w-lg">
+            <h2 className="text-3xl md:text-4xl font-normal leading-tight max-w-lg">
               We'd love to hear from you — whether you have a project in mind,
               or just want to say hi.
             </h2>
@@ -21,7 +21,7 @@ export function Footer() {
           </div>
 
           <div className="lg:pl-24 space-y-8">
-            <h3 className="text-xl font-bold">Join our newsletter</h3>
+            <h3 className="text-xl font-normal">Join our newsletter</h3>
             <div className="flex gap-4 max-w-md">
               <Input
                 placeholder="Name"

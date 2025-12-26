@@ -15,7 +15,7 @@ const QUESTIONS = [
 export function FAQ() {
   return (
     <section id="faq" className="py-24 container mx-auto px-6 max-w-4xl">
-      <h2 className="text-4xl font-bold mb-12">FAQ.</h2>
+      <h2 className="text-4xl font-normal mb-12">FAQ.</h2>
       <Accordion type="single" collapsible className="w-full">
         {QUESTIONS.map((question, idx) => (
           <AccordionItem key={idx} value={`item-${idx}`}>

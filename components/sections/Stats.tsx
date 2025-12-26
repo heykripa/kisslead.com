@@ -11,7 +11,7 @@ export function Stats() {
       <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
         {stats.map((stat, idx) => (
           <div key={idx} className="flex flex-col gap-2">
-            <span className="text-4xl md:text-5xl font-bold">{stat.value}</span>
+            <span className="text-4xl md:text-5xl font-normal">{stat.value}</span>
             <p className="text-sm text-muted-foreground">{stat.label}</p>
           </div>
         ))}

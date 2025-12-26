@@ -40,7 +40,7 @@ export function Services() {
   return (
     <section id="services" ref={sectionRef} className="overflow-hidden">
         <div className="py-12 container mx-auto px-6">
-            <h2 className="text-4xl md:text-5xl font-bold mb-8">Our Services.</h2>
+            <h2 className="text-4xl md:text-5xl font-normal mb-8">Our Services.</h2>
         </div>
       <div ref={triggerRef} className="flex flex-nowrap h-[60vh] items-center">
         <div className="flex gap-8 px-6 pl-[max(2rem,calc((100vw-1400px)/2))]">
@@ -51,7 +51,7 @@ export function Services() {
                 style={{ backgroundColor: service.color }}
             >
                 <div>
-                    <span className="text-sm font-bold tracking-widest opacity-60 mb-4 block">
+                    <span className="text-sm font-normal tracking-widest opacity-60 mb-4 block">
                         {service.index}
                     </span>
                     <div className="p-4 bg-black/10 w-fit rounded-full mb-8">
@@ -61,7 +61,7 @@ export function Services() {
                 </div>
                 
                 <div>
-                    <h3 className="text-3xl font-bold mb-4">{service.label}</h3>
+                    <h3 className="text-3xl font-normal mb-4">{service.label}</h3>
                     <p className="text-lg opacity-80 max-w-sm">
                         {service.desc}
                     </p>
