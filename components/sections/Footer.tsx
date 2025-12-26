@@ -1,6 +1,6 @@
-import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import Link from "next/link"
+import { NoiseBackground } from "@/components/ui/noise-background"
 
 export function Footer() {
   return (
@@ -22,12 +22,23 @@ export function Footer() {
 
           <div className="lg:pl-24 space-y-8">
             <h3 className="text-xl font-normal">Join our newsletter</h3>
-            <div className="flex gap-4 max-w-md">
+            <div className="flex items-center gap-0 bg-secondary rounded-full p-1 pl-4 max-w-md border border-border/50">
               <Input
                 placeholder="Name"
-                className="bg-secondary border-transparent focus:border-input"
+                className="bg-transparent border-none focus-visible:ring-0 focus-visible:ring-offset-0 px-0 h-auto shadow-none placeholder:text-muted-foreground outline-none"
               />
-              <Button>SEND</Button>
+              <NoiseBackground 
+                containerClassName="w-fit p-1.5 rounded-full shrink-0" 
+                gradientColors={[ 
+                  "rgb(255, 100, 150)", 
+                  "rgb(100, 150, 255)", 
+                  "rgb(255, 200, 100)", 
+                ]} 
+              > 
+                <button className="h-full w-full cursor-pointer rounded-full bg-linear-to-r from-neutral-100 via-neutral-100 to-white px-6 py-2 text-sm font-medium text-black shadow-[0px_2px_0px_0px_var(--color-neutral-50)_inset,0px_0.5px_1px_0px_var(--color-neutral-400)] transition-all duration-100 active:scale-98 dark:from-black dark:via-black dark:to-neutral-900 dark:text-white dark:shadow-[0px_1px_0px_0px_var(--color-neutral-950)_inset,0px_1px_0px_0px_var(--color-neutral-800)]"> 
+                  SEND
+                </button> 
+              </NoiseBackground>
             </div>
             <p className="text-sm text-muted-foreground">
               Get the latest insights and news from our team.

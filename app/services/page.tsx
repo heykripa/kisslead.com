@@ -6,6 +6,7 @@ import { motion } from "framer-motion"
 import DarkVeil from "@/components/backgrounds/DarkVeil"
 import { ArrowRight, BarChart3, Search, Share2, MousePointer2, Layout, ShieldCheck, Users, Briefcase } from "lucide-react"
 import Image from "next/image"
+import { CardSpotlight } from "@/components/ui/card-spotlight"
 
 const SERVICES = [
   { 
@@ -116,56 +117,50 @@ export default function ServicesPage() {
             {SERVICES.map((service, i) => (
               <motion.div
                 key={service.index}
-                className="group relative rounded-3xl p-8 md:p-12 overflow-hidden min-h-[400px] flex flex-col justify-between transition-all duration-500 hover:-translate-y-1 bg-zinc-950"
+                className="h-full"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
               >
-                {/* Background Image with Black Overlay */}
-                <div className="absolute inset-0 z-0">
-                    <Image 
-                        src={service.image} 
-                        alt={service.label}
-                        fill
-                        className="object-cover opacity-70 grayscale group-hover:opacity-90 group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
-                    />
-                    <div className="absolute inset-0 bg-black/40 transition-opacity group-hover:bg-black/20" />
-                </div>
+                <CardSpotlight 
+                  className="h-full flex flex-col justify-between p-8 md:p-12 rounded-3xl bg-white border-neutral-200 dark:bg-neutral-950 dark:border-neutral-800"
+                  color={service.color}
+                >
+                  <div className="relative z-20 flex flex-col h-full justify-between text-black">
+                      <div>
+                          <div className="flex justify-between items-start mb-8">
+                              <div className="flex flex-col gap-4">
+                                  <span className="text-sm font-normal tracking-widest opacity-40">
+                                      {service.index}
+                                  </span>
+                                  <div className="p-3 bg-neutral-100 w-fit rounded-xl backdrop-blur-md group-hover:bg-neutral-200 transition-colors border border-neutral-200">
+                                      <service.icon className="w-6 h-6 opacity-60 group-hover:opacity-100 transition-opacity text-black" strokeWidth={1.5} />
+                                  </div>
+                              </div>
+                              <div className="w-10 h-10 rounded-full bg-neutral-100 flex items-center justify-center group-hover:bg-neutral-200 transition-colors">
+                                  <ArrowRight className="w-5 h-5 -rotate-45 group-hover:rotate-0 transition-transform duration-300 text-black" />
+                              </div>
+                          </div>
+                          
+                          <h3 className="text-3xl md:text-4xl font-normal mb-6 tracking-tight text-black">{service.label}</h3>
+                          <p className="text-lg opacity-80 mb-8 max-w-md leading-relaxed group-hover:opacity-100 transition-opacity text-neutral-800">
+                              {service.desc}
+                          </p>
+                      </div>
 
-                <div className="relative z-10 flex flex-col h-full justify-between text-white">
-                    <div>
-                        <div className="flex justify-between items-start mb-8">
-                            <div className="flex flex-col gap-4">
-                                <span className="text-sm font-normal tracking-widest opacity-40">
-                                    {service.index}
-                                </span>
-                                <div className="p-3 bg-white/5 w-fit rounded-xl backdrop-blur-md group-hover:bg-white/10 transition-colors border border-white/10">
-                                    <service.icon className="w-6 h-6 opacity-60 group-hover:opacity-100 transition-opacity" strokeWidth={1.5} />
-                                </div>
-                            </div>
-                            <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-colors">
-                                <ArrowRight className="w-5 h-5 -rotate-45 group-hover:rotate-0 transition-transform duration-300 text-white" />
-                            </div>
-                        </div>
-                        
-                        <h3 className="text-3xl md:text-4xl font-normal mb-6 tracking-tight">{service.label}</h3>
-                        <p className="text-lg opacity-50 mb-8 max-w-md leading-relaxed group-hover:opacity-80 transition-opacity">
-                            {service.desc}
-                        </p>
-                    </div>
-
-                    <div className="border-t border-white/10 pt-6">
-                        <ul className="grid grid-cols-2 gap-2">
-                            {service.features.map((feature) => (
-                                <li key={feature} className="text-sm font-medium opacity-40 flex items-center gap-2 group-hover:opacity-70 transition-opacity">
-                                    <span className="w-1.5 h-1.5 rounded-full bg-white/40" />
-                                    {feature}
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                </div>
+                      <div className="border-t border-neutral-200 pt-6">
+                          <ul className="grid grid-cols-2 gap-2">
+                              {service.features.map((feature) => (
+                                  <li key={feature} className="text-sm font-medium opacity-70 flex items-center gap-2 group-hover:opacity-100 transition-opacity text-neutral-700">
+                                      <span className="w-1.5 h-1.5 rounded-full bg-neutral-500" />
+                                      {feature}
+                                  </li>
+                              ))}
+                          </ul>
+                      </div>
+                  </div>
+                </CardSpotlight>
               </motion.div>
             ))}
             

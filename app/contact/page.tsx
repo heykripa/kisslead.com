@@ -14,6 +14,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 import { motion } from "framer-motion"
+import { NoiseBackground } from "@/components/ui/noise-background"
 
 const FAQ_ITEMS = [
   {
@@ -141,9 +142,20 @@ export default function ContactPage() {
                     />
                   </div>
 
-                  <Button size="lg" className="w-full bg-foreground text-background hover:bg-foreground/90 rounded-none h-14 text-sm tracking-widest uppercase mt-4">
-                    Send
-                  </Button>
+                  <div className="flex justify-center mt-4"> 
+                    <NoiseBackground 
+                      containerClassName="w-full p-2 rounded-full mx-auto" 
+                      gradientColors={[ 
+                        "rgb(255, 100, 150)", 
+                        "rgb(100, 150, 255)", 
+                        "rgb(255, 200, 100)", 
+                      ]} 
+                    > 
+                      <button type="submit" className="h-14 w-full cursor-pointer rounded-full bg-linear-to-r from-neutral-900 via-black to-black px-8 text-sm font-medium uppercase tracking-widest text-white shadow-[0px_1px_0px_0px_rgba(255,255,255,0.1)_inset,0px_1px_2px_0px_rgba(0,0,0,0.5)] transition-all duration-100 active:scale-98"> 
+                         Send
+                       </button> 
+                    </NoiseBackground> 
+                  </div>
                 </form>
               </motion.div>
             </div>
