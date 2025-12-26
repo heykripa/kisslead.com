@@ -29,8 +29,8 @@ export function Header() {
           FAQ
         </Link>
       </nav>
-      <Link href="#contact">
-        <Button variant="default" size="sm" className="rounded-full">
+      <Link href="/contact">
+        <Button variant="default" size="sm" className="rounded-full cursor-pointer">
           Let&apos;s Talk
         </Button>
       </Link>
