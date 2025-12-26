@@ -1,6 +1,7 @@
 "use client"
 
 import { useLayoutEffect, useRef } from "react"
+import Image from "next/image"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { motion } from "framer-motion"
@@ -11,12 +12,14 @@ gsap.registerPlugin(ScrollTrigger)
 
 const PILLS = ["Yallo!", "Bliss+", "Flea", "Plus"]
 const IMAGES = [
-  "bg-red-400",
-  "bg-blue-400",
-  "bg-green-400",
-  "bg-yellow-400",
-  "bg-purple-400",
-  "bg-orange-400",
+  "/hero-slide-images/hero-silde-1.jpg",
+  "/hero-slide-images/hero-silde-2.gif",
+  "/hero-slide-images/hero-silde-3.jpg",
+  "/hero-slide-images/hero-silde-4.jpg",
+  "/hero-slide-images/hero-silde-5.jpg",
+  "/hero-slide-images/hero-silde-6.gif",
+  "/hero-slide-images/hero-silde-7.jpg",
+  "/hero-slide-images/hero-silde-8.jpg",
 ]
 
 const SHAPES: ("tl" | "tr")[] = [
@@ -71,23 +74,21 @@ export function Hero() {
           }}
           style={{ width: "max-content" }}
         >
-          {[...IMAGES, ...IMAGES].map((color, idx) => (
+          {[...IMAGES, ...IMAGES].map((src, idx) => (
             <SquircleWrapper
               key={idx}
               corner={SHAPES[idx % SHAPES.length]}
               radius={120}
               className="h-full w-[40vw] md:w-[25vw] lg:w-[15vw] flex-shrink-0 relative"
             >
-              <div
-                className={cn(
-                  "h-full w-full",
-                  color
-                )}
-              >
+              <div className="h-full w-full relative">
+                <Image
+                  src={src}
+                  alt={`Hero slide ${(idx % IMAGES.length) + 1}`}
+                  fill
+                  className="object-cover"
+                />
                 <div className="absolute inset-0 bg-black/5" />
-                 <div className="absolute inset-0 flex items-center justify-center text-white/40 font-normal">
-                    IMG {(idx % IMAGES.length) + 1}
-                 </div>
               </div>
             </SquircleWrapper>
           ))}

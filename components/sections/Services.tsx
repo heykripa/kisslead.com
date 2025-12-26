@@ -1,12 +1,9 @@
 "use client"
 
-import { useLayoutEffect, useRef } from "react"
-import gsap from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { useRef } from "react"
+import { motion, useScroll, useTransform } from "framer-motion"
 import { Palette, Code2, Cloud, Building2, BarChart3 } from "lucide-react"
 import Image from "next/image"
-
-gsap.registerPlugin(ScrollTrigger)
 
 const SERVICES = [
   { 
@@ -52,40 +49,27 @@ const SERVICES = [
 ]
 
 export function Services() {
-  const sectionRef = useRef<HTMLDivElement>(null)
-  const triggerRef = useRef<HTMLDivElement>(null)
+  const targetRef = useRef<HTMLDivElement>(null)
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+    offset: ["start start", "end end"],
+  })
 
-  useLayoutEffect(() => {
-    const ctx = gsap.context(() => {
-      const cards = gsap.utils.toArray(".service-card")
-      
-      gsap.to(cards, {
-        xPercent: -100 * (cards.length - 1),
-        ease: "none",
-        scrollTrigger: {
-          trigger: triggerRef.current,
-          pin: true,
-          scrub: 1,
-          snap: 1 / (cards.length - 1),
-          end: () => "+=" + (triggerRef.current?.offsetWidth || 0),
-        },
-      })
-    }, sectionRef)
-
-    return () => ctx.revert()
-  }, [])
+  // Adjust the range based on the number of cards to ensure the last one is fully visible
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-75%"])
 
   return (
-    <section id="services" ref={sectionRef} className="overflow-hidden">
-        <div className="py-12 container mx-auto px-6">
+    <section id="services" ref={targetRef} className="relative h-[300vh] bg-background">
+      <div className="sticky top-0 flex h-screen items-start overflow-hidden">
+        <div className="absolute top-28 left-0 right-0 z-10 px-6 container mx-auto">
             <h2 className="text-4xl md:text-5xl font-normal mb-8">Our Services.</h2>
         </div>
-      <div ref={triggerRef} className="flex flex-nowrap h-[60vh] items-center">
-        <div className="flex gap-8 px-6 pl-[max(2rem,calc((100vw-1400px)/2))]">
+        
+        <motion.div style={{ x }} className="flex gap-8 px-6 pl-[max(1.5rem,calc((100vw-1400px)/2+1.5rem))] pt-52 md:pt-64">
             {SERVICES.map((service) => (
             <div
                 key={service.index}
-                className="service-card group relative flex-none w-[80vw] md:w-[600px] h-[50vh] rounded-3xl overflow-hidden flex flex-col justify-between transition-all duration-500 hover:scale-[1.02] bg-zinc-950"
+                className="group relative flex-none w-[80vw] md:w-[600px] h-[50vh] rounded-sm overflow-hidden flex flex-col justify-between transition-all duration-300 ease-out hover:scale-[1.02] bg-zinc-950"
             >
                 {/* Background Image with Black Overlay */}
                 <div className="absolute inset-0 z-0">
@@ -117,7 +101,7 @@ export function Services() {
                 </div>
             </div>
             ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   )
