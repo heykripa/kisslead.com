@@ -4,7 +4,7 @@ import Link from "next/link"
 
 export function Footer() {
   return (
-    <footer className="bg-secondary/30 pt-24 pb-12">
+    <footer id="contact" className="bg-secondary/30 pt-24 pb-12">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-24">
           <div className="space-y-8">
@@ -13,10 +13,10 @@ export function Footer() {
               or just want to say hi.
             </h2>
             <Link
-              href="mailto:hi@kisslead.com"
+              href="mailto:hello@kisslead.com"
               className="text-xl font-medium underline underline-offset-4 hover:text-primary/70 transition-colors"
             >
-              hi@kisslead.com
+              hello@kisslead.com
             </Link>
           </div>
 
@@ -25,7 +25,7 @@ export function Footer() {
             <div className="flex gap-4 max-w-md">
               <Input
                 placeholder="Name"
-                className="bg-background border-transparent focus:border-input"
+                className="bg-secondary border-transparent focus:border-input"
               />
               <Button>SEND</Button>
             </div>
@@ -36,15 +36,31 @@ export function Footer() {
         </div>
 
         <div className="flex flex-col md:flex-row justify-between items-center border-t border-border/50 pt-8 text-sm text-muted-foreground">
-          <p>© 2025 Kisslead Studio. All rights reserved.</p>
+          <p>© 2025 Kisslead Technologies. All rights reserved.</p>
+          
+          <div className="flex gap-6 my-4 md:my-0">
+            <Link href="/privacy" className="hover:text-primary transition-colors">
+              Privacy
+            </Link>
+            <Link href="/terms" className="hover:text-primary transition-colors">
+              Terms
+            </Link>
+            <Link href="/payments" className="hover:text-primary transition-colors">
+              Payments
+            </Link>
+            <Link href="/refund" className="hover:text-primary transition-colors">
+              Refund
+            </Link>
+          </div>
+
           <div className="flex gap-6 mt-4 md:mt-0">
-            <Link href="#" className="hover:text-primary transition-colors">
+            <Link href="https://www.instagram.com/kisslead/" className="hover:text-primary transition-colors">
               Instagram
             </Link>
-            <Link href="#" className="hover:text-primary transition-colors">
-              Twitter
+            <Link href="https://www.facebook.com/kisslead/" className="hover:text-primary transition-colors">
+              Facebook
             </Link>
-            <Link href="#" className="hover:text-primary transition-colors">
+            <Link href="https://www.linkedin.com/company/kisslead/" className="hover:text-primary transition-colors">
               LinkedIn
             </Link>
           </div>

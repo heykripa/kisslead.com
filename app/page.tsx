@@ -1,5 +1,6 @@
 import { Header } from "@/components/layout/Header"
 import { Hero } from "@/components/sections/Hero"
+import { LogoCloud } from "@/components/sections/LogoCloud"
 import { Projects } from "@/components/sections/Projects"
 import { Services } from "@/components/sections/Services"
 import { Stats } from "@/components/sections/Stats"
@@ -11,6 +12,7 @@ export default function Home() {
     <main className="min-h-screen bg-background font-sans text-foreground selection:bg-black selection:text-white">
       <Header />
       <Hero />
+      <LogoCloud />
       <Projects />
       <Services />
       <Stats />

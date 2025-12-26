@@ -1,10 +1,13 @@
+import Image from "next/image"
 import { cn } from "@/lib/utils"
 
 const PROJECTS = [
-  { id: 1, title: "THINGSY", category: "Branding", image: "/projects/thingsy.jpg", year: "2025", color: "bg-stone-200" },
-  { id: 2, title: "LUNAR", category: "Web Design", image: "/projects/lunar.jpg", year: "2025", color: "bg-sky-200" },
-  { id: 3, title: "KROMA", category: "Creative Direction", image: "/projects/kroma.jpg", year: "2025", color: "bg-rose-200" },
-  { id: 4, title: "ASTERISK", category: "UI/UX", image: "/projects/asterisk.jpg", year: "2025", color: "bg-indigo-200" },
+  { id: 1, title: "THINGSY", category: "Branding", image: "/latest-projects/latest-projects-1.png", year: "2025", color: "bg-stone-200" },
+  { id: 2, title: "LUNAR", category: "Web Design", image: "/latest-projects/latest-projects-2.png", year: "2025", color: "bg-sky-200" },
+  { id: 3, title: "KROMA", category: "Creative Direction", image: "/latest-projects/latest-projects-3.png", year: "2025", color: "bg-rose-200" },
+  { id: 4, title: "ASTERISK", category: "UI/UX", image: "/latest-projects/latest-projects-4.png", year: "2025", color: "bg-indigo-200" },
+  { id: 5, title: "ZENITH", category: "Mobile App", image: "/latest-projects/latest-projects-5.png", year: "2025", color: "bg-emerald-200" },
+  { id: 6, title: "ORBIT", category: "Brand Identity", image: "/latest-projects/latest-projects-6.png", year: "2025", color: "bg-amber-200" },
 ]
 
 export function Projects() {
@@ -18,10 +21,13 @@ export function Projects() {
         {PROJECTS.map((project) => (
           <div key={project.id} className="group cursor-pointer">
             <div className={cn("aspect-square rounded-2xl mb-4 overflow-hidden relative", project.color)}>
-               {/* Placeholder for image */}
-               <div className="absolute inset-0 flex items-center justify-center text-4xl font-normal opacity-20 group-hover:scale-105 transition-transform duration-500">
-                  {project.title}
-               </div>
+               <Image
+                 src={project.image}
+                 alt={project.title}
+                 fill
+                 className="object-cover group-hover:scale-105 transition-transform duration-500"
+                 sizes="(max-width: 768px) 100vw, 50vw"
+               />
             </div>
             <div className="flex justify-between items-start">
               <div>
