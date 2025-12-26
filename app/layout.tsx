@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Kisslead® | Creative Studio",
-  description: "A creative studio cultivating bold brands, beautiful websites, and ideas that refuse to be ordinary.",
+  description: "A creative studio cultivating bold brands, beautiful websites, SaaS, enterprise apps, and ideas that refuse to be ordinary.",
 };
 
 export default function RootLayout({

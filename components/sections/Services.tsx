@@ -3,14 +3,15 @@
 import { useLayoutEffect, useRef } from "react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { cn } from "@/lib/utils"
 
 gsap.registerPlugin(ScrollTrigger)
 
 const SERVICES = [
   { index: "001", label: "BRANDING", desc: "We craft logos and brand systems that leave a lasting impression.", color: "#E5E1FF" },
   { index: "002", label: "DEVELOPMENT", desc: "Beautiful and functional websites built with purpose and precision.", color: "#D4FFC1" },
-  { index: "003", label: "SEO OPTIMIZATION", desc: "Get found faster with tailored SEO strategies backed by real data.", color: "#FFD1D1" },
+  { index: "003", label: "SaaS SOLUTIONS", desc: "Scalable and secure cloud-based applications designed for growth.", color: "#D1F3FF" },
+  { index: "004", label: "ENTERPRISE APPS", desc: "Robust, high-performance software tailored for complex business needs.", color: "#FFF4D1" },
+  { index: "005", label: "SEO OPTIMIZATION", desc: "Get found faster with tailored SEO strategies backed by real data.", color: "#FFD1D1" },
 ]
 
 export function Services() {

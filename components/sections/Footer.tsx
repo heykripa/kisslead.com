@@ -9,7 +9,7 @@ export function Footer() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-24">
           <div className="space-y-8">
             <h2 className="text-3xl md:text-4xl font-normal leading-tight max-w-lg">
-              We'd love to hear from you — whether you have a project in mind,
+              We&apos;d love to hear from you — whether you have a project in mind,
               or just want to say hi.
             </h2>
             <Link

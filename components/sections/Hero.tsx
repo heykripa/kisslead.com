@@ -88,8 +88,8 @@ export function Hero() {
       {/* Content */}
       <div ref={textRef} className="container mx-auto px-6 text-center max-w-4xl">
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-normal tracking-tight mb-8 leading-tight">
-          We're Kisslead® — a creative studio cultivating bold brands, beautiful
-          websites, and ideas that refuse to be ordinary.
+          We&apos;re Kisslead® — a creative studio cultivating bold brands, beautiful
+          websites, SaaS, enterprise apps, and ideas that refuse to be ordinary.
         </h1>
         
         <div className="flex flex-wrap justify-center gap-3">

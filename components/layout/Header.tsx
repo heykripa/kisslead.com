@@ -19,7 +19,7 @@ export function Header() {
         </Link>
       </nav>
       <Button variant="default" size="sm" className="rounded-full">
-        Let's Talk
+        Let&apos;s Talk
       </Button>
     </header>
   )
