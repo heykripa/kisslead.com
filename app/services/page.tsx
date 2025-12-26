@@ -7,6 +7,7 @@ import DarkVeil from "@/components/backgrounds/DarkVeil"
 import { ArrowRight, BarChart3, Search, Share2, MousePointer2, Layout, ShieldCheck, Users, Briefcase } from "lucide-react"
 import Image from "next/image"
 import { CardSpotlight } from "@/components/ui/card-spotlight"
+import { NoiseBackground } from "@/components/ui/noise-background"
 
 const SERVICES = [
   { 
@@ -164,23 +165,37 @@ export default function ServicesPage() {
               </motion.div>
             ))}
             
-            {/* Call to Action Card */}
-            <motion.div
-                className="rounded-3xl p-8 md:p-12 bg-black text-white flex flex-col justify-center items-center text-center min-h-[400px]"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: SERVICES.length * 0.1 }}
-            >
-                <h3 className="text-3xl md:text-4xl font-normal mb-6">Have a project in mind?</h3>
-                <p className="text-white/70 mb-8 max-w-sm">
-                    Let's collaborate to build something amazing together.
-                </p>
-                <a href="#contact" className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-white text-black font-medium hover:bg-gray-200 transition-colors">
-                    Start a Project
-                </a>
-            </motion.div>
+
           </div>
+
+          <motion.div
+             className="relative w-full aspect-[2/1] md:aspect-[2.4/1] rounded-sm overflow-hidden bg-black mt-16 flex flex-col items-center justify-center text-center"
+             initial={{ opacity: 0, y: 20 }}
+             whileInView={{ opacity: 1, y: 0 }}
+             viewport={{ once: true }}
+          >
+             <DarkVeil hueShift={66} className="absolute inset-0 z-0 opacity-80" />
+             <div className="relative z-10 p-8 md:p-12 flex flex-col items-center">
+                 <h3 className="text-3xl md:text-5xl font-medium mb-6 text-white">Have a project in mind?</h3>
+                 <p className="text-white/80 mb-8 max-w-lg text-lg">
+                     Let's collaborate to build something amazing together.
+                 </p>
+                 <a href="/contact">
+                    <NoiseBackground 
+                        containerClassName="w-fit p-2 rounded-full mx-auto" 
+                        gradientColors={[ 
+                            "rgb(255, 100, 150)", 
+                            "rgb(100, 150, 255)", 
+                            "rgb(255, 200, 100)", 
+                        ]} 
+                    > 
+                        <button className="h-full w-full cursor-pointer rounded-full bg-linear-to-r from-neutral-100 via-neutral-100 to-white px-8 py-4 text-black shadow-[0px_2px_0px_0px_var(--color-neutral-50)_inset,0px_0.5px_1px_0px_var(--color-neutral-400)] transition-all duration-100 active:scale-98 dark:from-black dark:via-black dark:to-neutral-900 dark:text-white dark:shadow-[0px_1px_0px_0px_var(--color-neutral-950)_inset,0px_1px_0px_0px_var(--color-neutral-800)] text-base font-medium"> 
+                            Start a Project
+                        </button> 
+                    </NoiseBackground>
+                </a>
+             </div>
+          </motion.div>
         </section>
       </main>
       <Footer />
